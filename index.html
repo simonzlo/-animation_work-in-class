@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+      .blast {
+        width: 151px;
+        height: 151px;
+        display: block;
+        position: absolute;
+        left: 50%;
+        background: url("images/blast-151.png");
+        animation: blast 1s steps(1) infinite;
+      }
+
+      .mario {
+        width: 68px;
+        height: 68px;
+        display: block;
+        position: relative;
+        background: url("images/mario-walk-n-jump-68.png");
+        /* background-position: 0 top; */
+        animation: walk 1s steps(1) infinite;
+      }
+
+      .mario2 {
+        width: 68px;
+        height: 68px;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        background: url("images/mario-walk-n-jump-68.png");
+        /* background-position: 0 top; */
+        animation: jump 5s steps(1) infinite;
+      }
+
+      .path {
+        width: 68px;
+        height: 68px;
+        display: block;
+        position: absolute;
+        top: 200px;
+        animation: path 5s linear infinite;
+      }
+
+      .blast:hover {
+        animation-play-state: paused;
+      }
+
+      .smile {
+        width: 160px;
+        height: 160px;
+        display: inline-block;
+        /* position: relative; */
+        background: url("images/emoji-160.png");
+        animation: spin 3s infinite;
+      }
+      .smile-e {
+        width: 160px;
+        height: 160px;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: url("images/emoji-160.png");
+        background-position: -640px top;
+        animation: blink 1s steps(1) alternate infinite;
+        animation-play-state: paused;
+      }
+      .smile-m {
+        width: 160px;
+        height: 160px;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: url("images/emoji-160.png");
+        background-position: -160px top;
+        animation: smile 1s steps(1) alternate infinite;
+        animation-play-state: paused;
+      }
+
+      .smile:hover .smile-e, .smile:hover .smile-m {
+        animation-play-state: running;
+      }
+
+      @keyframes spin {
+        0%{transform: rotate(0deg);}
+        100%{transform: rotate(360deg);}
+      }
+
+      @keyframes blink {
+        0% {background-position: -640px top;}
+        33% {background-position: -800px top;}
+        66% {background-position: -960px top;}
+      }
+
+      @keyframes smile {
+        0% {background-position: -160px top;}
+        33% {background-position: -320px top;}
+        66% {background-position: -480px top;}
+      }
+
+      @keyframes walk {
+        0% {background-position: 0 top;}
+        25% {background-position: -68px top;}
+        50% {background-position: -136px top;}
+        75% {background-position: -204px top;}
+      }
+
+      @keyframes jump {
+        0% {opacity: 0;}
+        49% {background-position: -272px top; opacity: 1;}
+        50% {background-position: -340px top; opacity: 1;}
+        51% {background-position: -340px top; opacity: 1;}
+        52% {background-position: -340px top; opacity: 0;}
+        100% {opacity: 0;}
+      }
+
+      @keyframes path {
+        0% {left: -68px;}
+        49% {left: 45%; top: 200px;}
+        50% {left: 50%; top: 150px;}
+        51% {left: 52%; top: 200px;}
+        100% {left: 100%;}
+      }
+
+
+      @keyframes blast {
+        0% {background-position: 0px 0px;}
+        3% {background-position: -151px 0px;}
+        6% {background-position: -302px 0px;}
+        9% {background-position: -453px 0px;}
+        12% {background-position: -604px 0px;}
+        15% {background-position: -755px 0px;}
+        18% {background-position: -906px 0px;}
+        21% {background-position: -1057px 0px;}
+        24% {background-position: 0px -151px;}
+        27% {background-position: -151px -151px;}
+        30% {background-position: -302px -151px;}
+        33% {background-position: -453px -151px;}
+        36% {background-position: -604px -151px;}
+        39% {background-position: -755px -151px;}
+        42% {background-position: -906px -151px;}
+        45% {background-position: -1057px -151px;}
+        48% {background-position: 0px -302px;}
+        51% {background-position: -151px -302px;}
+        54% {background-position: -302px -302px;}
+        57% {background-position: -453px -302px;}
+        60% {background-position: -604px -302px;}
+        63% {background-position: -755px -302px;}
+        66% {background-position: -906px -302px;}
+        69% {background-position: -1057px -302px;}
+        72% {background-position: 0px -453px;}
+        75% {background-position: -151px -453px;}
+        78% {background-position: -302px -453px;}
+        81% {background-position: -453px -453px;}
+        84% {background-position: -604px -453px;}
+        87% {background-position: -755px -453px;}
+        90% {background-position: -906px -453px;}
+        93% {background-position: -1057px -453px;}
+      }
+    </style>
+  </head>
+  <body>
+    <div class="smile">
+      <div class="smile-e"></div>
+      <div class="smile-m"></div>
+    </div>
+
+    <div class="smile">
+      <div class="smile-e"></div>
+      <div class="smile-m"></div>
+    </div>
+
+    <div class="smile">
+      <div class="smile-e"></div>
+      <div class="smile-m"></div>
+    </div>
+
+   <div class="blast"></div>
+
+    <div class="path">
+      <div class="mario"></div>
+      <div class="mario2"></div>
+    </div>
+
+  </body>
+</html>
